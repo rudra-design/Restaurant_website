@@ -219,6 +219,10 @@ footer{
     font-size: 32px;
 }
 
+.icon{
+    text-decoration: none;
+}
+
 @media (max-width:786px) {
     .hero{
         flex-direction: column;
