@@ -221,6 +221,7 @@ footer{
 
 .icon{
     text-decoration: none;
+    color: gray;
 }
 
 @media (max-width:786px) {
