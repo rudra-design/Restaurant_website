@@ -6,6 +6,17 @@
     <title>Restaurant website</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3f4aebf6bc.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "xUlLxVWdKrZ5v5ohX",
+        });
+    })();
+    </script>
 </head>
 <body>
     <nav>
@@ -82,6 +93,8 @@
             </div>
         </div>
      </div>
+
+
      <footer>
         <div class="footer_container container">
             <div class="footer_logo">
@@ -107,6 +120,24 @@
             <div class="news_letter">
                 <h3>Support</h3>
                 <input type="email'" placeholder="Enter your e-mail......">
+
+                <!-- Contact Section -->
+            <section id="contact-section">
+                <h2 style="color: white;">Contact Me</h2>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea><br>
+
+                    <button type="submit" onclick="sendMail() ">Submit</button>
+                </form>
+            </section>
+
                 <h3>Follow Us</h3>
                 <div class="icon_container">
                     <div class="icon">
@@ -133,5 +164,18 @@
             </div>
         </div>
      </footer>
+     <script>
+        function sendMail(){
+    let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value,
+    }
+
+    emailjs.send("service_lah89nl", "template_uuhnrre", parms).then(event.preventDefault(), alert("Email sent!!"))
+}
+
+
+     </script>
 </body>
 </html>
